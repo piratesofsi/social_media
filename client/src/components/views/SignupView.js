@@ -5,10 +5,9 @@ import {
   TextField,
   Typography,
   Link,
-  Alert,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { signup } from "../../api/users";
 import { loginUser } from "../../helpers/authHelper";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +19,7 @@ const SignupView = () => {
   const navigate = useNavigate();
   const [serverError, setServerError] = useState("");
   const [errors, setErrors] = useState({});
+  const consentKey = "signupConsent18";
 
   const [formData, setFormData] = useState({
     username: "",
@@ -27,8 +27,18 @@ const SignupView = () => {
     password: "",
   });
 
+  useEffect(() => {
+    if (localStorage.getItem(consentKey) !== "true") {
+      navigate("/signup/consent");
+    }
+  }, [navigate]);
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleSubmit = async (e) => {

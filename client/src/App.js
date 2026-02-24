@@ -21,6 +21,7 @@ import CreatePostView from "./components/views/CreatePostView";
 import ProfileView from "./components/views/ProfileView";
 import LoginView from "./components/views/LoginView";
 import SignupView from "./components/views/SignupView";
+import SignupConsentView from "./components/views/SignupConsentView";
 import ExploreView from "./components/views/ExploreView";
 import PrivateRoute from "./components/PrivateRoute";
 import SearchView from "./components/views/SearchView";
@@ -59,6 +60,7 @@ function App() {
           <Route path="/search" element={<SearchView />} />
           <Route path="/users/:id" element={<ProfileView />} />
           <Route path="/login" element={<LoginView />} />
+          <Route path="/signup/consent" element={<SignupConsentView />} />
           <Route path="/signup" element={<SignupView />} />
         </Routes>
       </BrowserRouter>
