@@ -1,4 +1,5 @@
-import { Avatar, Card, useTheme } from "@mui/material";
+import { Card, useTheme } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import React from "react";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
@@ -15,7 +16,7 @@ const Message = (props) => {
     };
   } else if (message.direction === "from") {
     styles = {
-      messageColor: theme.palette.grey["100"],
+      messageColor: alpha(theme.palette.primary.main, 0.08),
       justifyContent: "flex-end",
     };
   }
@@ -36,6 +37,7 @@ const Message = (props) => {
           borderRadius: "25px",
           backgroundColor: styles.messageColor,
           borderWidth: "1px",
+          borderColor: alpha(theme.palette.primary.main, 0.12),
           paddingY: "12px",
           maxWidth: "70%",
           paddingX: 2,

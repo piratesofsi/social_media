@@ -1,11 +1,11 @@
 import {
-  Button,
   Card,
   IconButton,
   Stack,
   Typography,
   useTheme,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { AiFillCheckCircle, AiFillEdit, AiFillMessage } from "react-icons/ai";
@@ -100,9 +100,13 @@ const PostCard = (props) => {
             alignItems="center"
             spacing={1}
             sx={{
-              backgroundColor: "grey.100",
+              backgroundColor: alpha(theme.palette.primary.main, 0.08),
               width: "50px",
               padding: theme.spacing(1),
+              borderRight: `1px solid ${alpha(
+                theme.palette.primary.main,
+                0.12
+              )}`,
             }}
           >
             <LikeBox

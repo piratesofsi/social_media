@@ -69,9 +69,6 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
             rows={5}
             required
             name="content"
-            sx={{
-              backgroundColor: "white",
-            }}
             onChange={handleChange}
             onFocus={handleFocus}
             value={formData.content}
@@ -83,10 +80,7 @@ const CommentEditor = ({ label, comment, addComment, setReplying }) => {
             type="submit"
             fullWidth
             disabled={loading}
-            sx={{
-              backgroundColor: "white",
-              mt: 2,
-            }}
+            sx={{ mt: 2 }}
           >
             {loading ? <div>Submitting</div> : <div>Submit</div>}
           </Button>

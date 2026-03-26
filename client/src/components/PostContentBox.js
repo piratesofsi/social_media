@@ -1,5 +1,6 @@
 import { useTheme } from "@emotion/react";
-import { autocompleteClasses, Box, Card, CardActionArea } from "@mui/material";
+import { Box } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import React from "react";
 import "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +17,12 @@ const PostContentBox = (props) => {
           sx={{
             padding: theme.spacing(2),
             width: "92%",
-            "&:hover": { backgroundColor: "grey.50", cursor: "pointer" },
+            borderRadius: 2,
+            transition: "background-color 0.2s ease",
+            "&:hover": {
+              backgroundColor: alpha(theme.palette.primary.main, 0.06),
+              cursor: "pointer",
+            },
           }}
           onClick={() => navigate("/posts/" + post._id)}
         >

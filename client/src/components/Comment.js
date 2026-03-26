@@ -1,5 +1,6 @@
-import { Button, IconButton, Typography, useTheme } from "@mui/material";
-import { Box, compose } from "@mui/system";
+import { IconButton, Typography, useTheme } from "@mui/material";
+import { alpha } from "@mui/material/styles";
+import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { AiFillEdit, AiOutlineLine, AiOutlinePlus } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -58,14 +59,16 @@ const Comment = (props) => {
   };
 
   let style = {
-    backgroundColor: theme.palette.grey[100],
-    borderRadius: 1.5,
+    backgroundColor: alpha(theme.palette.primary.main, 0.06),
+    border: `1px solid ${alpha(theme.palette.primary.main, 0.1)}`,
+    borderRadius: 2,
     mb: theme.spacing(2),
     padding: theme.spacing(0),
   };
 
   if (depth % 2 === 1) {
-    style.backgroundColor = "white";
+    style.backgroundColor = alpha(theme.palette.secondary.main, 0.08);
+    style.border = `1px solid ${alpha(theme.palette.secondary.main, 0.16)}`;
   }
 
   return (

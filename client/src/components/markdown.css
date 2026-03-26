@@ -5,3 +5,39 @@
 .markdown :last-child {
   margin-bottom: 0;
 }
+
+.markdown {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: inherit;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: "Fraunces", "DM Serif Display", serif;
+  margin: 1.2rem 0 0.6rem;
+}
+
+.markdown blockquote {
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  background: rgba(31, 122, 116, 0.08);
+  border-left: 3px solid rgba(31, 122, 116, 0.35);
+  border-radius: 12px;
+}
+
+.markdown code {
+  background: rgba(31, 122, 116, 0.08);
+  border-radius: 6px;
+  padding: 0.1rem 0.35rem;
+  font-family: "Space Grotesk", "Sora", "Avenir Next", sans-serif;
+}
+
+.markdown pre {
+  background: rgba(31, 122, 116, 0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  overflow: auto;
+}
